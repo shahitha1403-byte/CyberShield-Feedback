@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberShield | Admin Feedback</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">🛡️ CyberShield Admin</div>
+
+        <span class="status">● ADMIN PANEL</span>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+
+            <p class="tag">CYBER SECURITY FEEDBACK MANAGEMENT</p>
+
+            <h1>
+                Feedback <span>Dashboard</span>
+            </h1>
+
+            <p>
+                Monitor and review feedback submitted by users.
+            </p>
+
+        </section>
+
+
+        <!-- Total Feedback -->
+
+        <section class="feedback-card">
+
+            <h2>📊 Feedback Overview</h2>
+
+            <div style="
+                margin-top: 20px;
+                padding: 25px;
+                border-radius: 10px;
+                background: #07111e;
+                border: 1px solid #244968;
+                text-align: center;
+            ">
+
+                <p style="color:#9db0c7;">
+                    Total Responses
+                </p>
+
+                <h1 style="
+                    color:#39d9ff;
+                    font-size:45px;
+                    margin-top:10px;
+                ">
+                    {{ total }}
+                </h1>
+
+            </div>
+
+        </section>
+
+
+        <!-- Feedback List -->
+
+        <section class="feedback-card">
+
+            <h2>💬 Submitted Feedback</h2>
+
+            <p class="subtitle">
+                Latest feedback responses are displayed below.
+            </p>
+
+
+            {% if feedbacks %}
+
+                {% for feedback in feedbacks %}
+
+                <div style="
+                    background:#07111e;
+                    border:1px solid #244968;
+                    border-radius:10px;
+                    padding:20px;
+                    margin-bottom:15px;
+                ">
+
+                    <h3 style="color:#39d9ff;">
+                        {{ feedback[1] }}
+                    </h3>
+
+                    <p style="color:#8ea4bc; margin-top:5px;">
+                        📧 {{ feedback[2] }}
+                    </p>
+
+                    <p style="margin-top:12px;">
+                        <strong>Category:</strong>
+                        {{ feedback[3] }}
+                    </p>
+
+                    <p style="margin-top:8px;">
+                        <strong>Rating:</strong>
+                        {{ feedback[4] }}/5 ⭐
+                    </p>
+
+                    <p style="
+                        margin-top:12px;
+                        color:#c9d8e8;
+                        line-height:1.6;
+                    ">
+                        <strong>Feedback:</strong><br>
+                        {{ feedback[5] }}
+                    </p>
+
+                    <p style="
+                        margin-top:12px;
+                        color:#70869e;
+                        font-size:12px;
+                    ">
+                        Submitted: {{ feedback[6] }}
+                    </p>
+
+                </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="security-note">
+                    📭 No feedback has been submitted yet.
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <div style="
+            text-align:center;
+            margin-bottom:50px;
+        ">
+
+            <a href="/" style="
+                color:#39d9ff;
+                text-decoration:none;
+            ">
+                ← Back to Feedback Form
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 CyberShield | Admin Feedback Dashboard
+        </p>
+
+    </footer>
+
+</body>
+</html>

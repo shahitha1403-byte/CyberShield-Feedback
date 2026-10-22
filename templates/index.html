@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberShield | Security Feedback</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛡️ CyberShield
+        </div>
+
+        <span class="status">
+            ● SYSTEM SECURE
+        </span>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <p class="tag">
+                CYBER SECURITY FEEDBACK SYSTEM
+            </p>
+
+            <h1>
+                Help Us Improve <span>Cyber Security</span>
+            </h1>
+
+            <p>
+                Share your feedback about security awareness,
+                privacy, threat detection and digital safety.
+            </p>
+
+        </section>
+
+
+        <section class="feedback-card">
+
+            <h2>
+                Security Feedback Form
+            </h2>
+
+            <p class="subtitle">
+                Your feedback helps us improve our security experience.
+            </p>
+
+
+            <form action="/submit" method="POST">
+
+
+                <!-- Name + Email -->
+
+                <div class="row">
+
+                    <div class="input-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="input-group">
+
+                    <label for="category">
+                        Feedback Category
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option value="">
+                            Select a category
+                        </option>
+
+                        <option>
+                            Security Awareness
+                        </option>
+
+                        <option>
+                            Privacy & Data Protection
+                        </option>
+
+                        <option>
+                            Threat Detection
+                        </option>
+
+                        <option>
+                            Cloud Security
+                        </option>
+
+                        <option>
+                            Website Security
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Rating -->
+
+                <div class="input-group">
+
+                    <label>
+                        Overall Experience
+                    </label>
+
+
+                    <div class="rating">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="rating"
+                                value="5"
+                                required
+                            >
+                            ⭐⭐⭐⭐⭐
+                        </label>
+
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="rating"
+                                value="4"
+                            >
+                            ⭐⭐⭐⭐
+                        </label>
+
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="rating"
+                                value="3"
+                            >
+                            ⭐⭐⭐
+                        </label>
+
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="rating"
+                                value="2"
+                            >
+                            ⭐⭐
+                        </label>
+
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="rating"
+                                value="1"
+                            >
+                            ⭐
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feedback -->
+
+                <div class="input-group">
+
+                    <label for="message">
+                        Your Feedback
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Tell us about your experience..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Privacy Notice -->
+
+                <div class="security-note">
+
+                    🔒
+                    <strong>Privacy Notice:</strong>
+
+                    Please do not share passwords,
+                    OTPs or confidential security information.
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button type="submit">
+                    Submit Secure Feedback
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 CyberShield |
+            Cyber Security Feedback System
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
